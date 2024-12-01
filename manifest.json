@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "SAQ Wine Info",
+  "version": "1.0",
+  "description": "Displays Vivino wine information for SAQ products",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*.vivino.com/*",
+    "https://*.saq.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.saq.com/*"],
+      "js": [
+        "utils/dom.js",
+        "utils/api.js",
+        "components/panel.js",
+        "content.js"
+      ],
+      "css": ["styles.css"]
+    }
+  ]
+}
